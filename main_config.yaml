@@ -1,0 +1,16 @@
+"team_name": "MNLPredators" # Your team name
+"eval_method": ["reward"] # mcqa, reward, rag, compression
+"task_type": "seq2seq" # causal_lm, seq2seq
+"policy_model_path": "./checkpoints/DPO/LoRA-LaMini-Flan-T5-783M-dpo_preference_pairs_15052024.jsonl-3epochs-1024max_target_length-2batch_size-0.0001lr-0.01wd-0.05warmup-16grad_accum-sigmoidloss_type_64r_8alphaproject-m2-2024-mnlpredators/checkpoints/DPO/LoRA-LaMini-Flan-T5-783M-dpo_preference_pairs_15052024.jsonl-3epochs-1024max_target_length-2batch_size-0.0001lr-0.01wd-0.05warmup-16grad_accum-sigmoidloss_type_64r_8alpha/" # Your path to the final checkpoint
+"reference_model_path": "MBZUAI/LaMini-Flan-T5-783M" # The repo id of your pretrained reference model
+"quantized_policy_model_path": "./checkpoints/best_model_quantized/" # Your path to the final quantized checkpoint
+"rag_policy_model_path": "./checkpoints/best_model_rag/" # Your path to the final RAG checkpoint
+
+"test_data_path": "./data/test_dpo_data.jsonl" # Your path to the test data
+"dpo_model_args": null # Put any model arguments required to load your DPO model below
+
+"rag_model_args": # Put any model arguments required to load your rag model below
+  "encoder_model_path": "thenlper/gte-small"
+  "retriever_model_path": "./checkpoints/rag_retriever"
+  "document_dir": "./documents/rag_dataset.json"
+"quantized_model_args": null # Put any model arguments required to load your quantized model below
